@@ -1,0 +1,10 @@
+org/reddys/automatick/domain/ParkingSlotTest.class
+org/reddys/automatick/command/ColorVsRegistrationNumberQueryCommandTest.class
+org/reddys/automatick/factory/CLICommandFactoryTest.class
+org/reddys/automatick/domain/VehicleTest.class
+org/reddys/automatick/command/ParkCommandTest.class
+org/reddys/automatick/command/LeaveCommandTest.class
+org/reddys/automatick/command/RegistrationNumberVsSlotNumberQueryCommandTest.class
+org/reddys/automatick/command/ColorVsSlotNumberQueryCommandTest.class
+org/reddys/automatick/domain/ParkingLotTest.class
+org/reddys/automatick/command/CreateLotCommandTest.class

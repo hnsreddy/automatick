@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ColorVsRegistrationNumberQueryCommand.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">automatick</a> &gt; <a href="index.source.html" class="el_package">org.reddys.automatick.command</a> &gt; <span class="el_source">ColorVsRegistrationNumberQueryCommand.java</span></div><h1>ColorVsRegistrationNumberQueryCommand.java</h1><pre class="source lang-java linenums">package org.reddys.automatick.command;
+
+import org.reddys.automatick.domain.ParkingLot;
+import org.reddys.automatick.domain.ParkingSlot;
+
+import java.io.IOException;
+import java.io.Writer;
+import java.util.Iterator;
+import java.util.List;
+
+<span class="fc" id="L11">public class ColorVsRegistrationNumberQueryCommand implements CLICommand {</span>
+
+    public void executeCLICommand(String[] args, Writer outputWriter) throws IOException {
+<span class="fc bfc" id="L14" title="All 2 branches covered.">        if (args.length &lt; 1) {</span>
+<span class="fc" id="L15">            outputWriter.write(&quot;Invalid use of command - registration_numbers_for_cars_with_colour command requires the color to be specified&quot;);</span>
+<span class="fc" id="L16">            return;</span>
+        }
+
+<span class="fc" id="L19">        String color = args[0];</span>
+
+<span class="fc" id="L21">        List&lt;ParkingSlot&gt; filteredList = ParkingLot.getInstance().colorQuery (color);</span>
+<span class="fc" id="L22">        Iterator&lt;ParkingSlot&gt; slotsIterator = filteredList.iterator();</span>
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        if (filteredList.size() &lt;= 0) {</span>
+<span class="fc" id="L24">            outputWriter.write(&quot;No vehicles found&quot;);</span>
+        }
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        while (slotsIterator.hasNext()) {</span>
+<span class="fc" id="L27">            outputWriter.write(slotsIterator.next().getParkedVehicle().getRegistrationNumber());</span>
+<span class="fc bfc" id="L28" title="All 2 branches covered.">            if (slotsIterator.hasNext()) {</span>
+<span class="fc" id="L29">                outputWriter.write (&quot;,&quot;);</span>
+            }
+        }
+<span class="fc" id="L32">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.2.201808211720</span></div></body></html>
