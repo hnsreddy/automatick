@@ -6,13 +6,13 @@ Automated ticketing system code challenge.
 
 This is a very simple app and hence getting the application fired up is a very simple process. 
 
-### Prerequisites
+## Prerequisites
 
 Java version 11+
 Maven version 4+
 The application was authored and tested on a unix based system; I am not quite sure if this application will run as seamlessly as it does on unix.
 
-### Installing
+## Installing
 
 Clone this repo anywhere you want to and run the following command after navigating to the application base folder (normally this would be a folder named "automatic")
 
