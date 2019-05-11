@@ -14,7 +14,7 @@ The application was authored and tested on a unix based system; I am not quite s
 
 ## Installing
 
-Clone this repo anywhere you want to and run the following command after navigating to the application base folder (normally this would be a folder named "automatic")
+Clone this repo anywhere you want to and run the following command after navigating to the application base folder (normally this would be a folder named "automatick")
 
 ```
 bin/setup.sh
