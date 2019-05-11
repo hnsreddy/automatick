@@ -6,6 +6,7 @@ Echo "Executing commands from input file $1"
 while read line
 do
 	tokens=( $line )
-	./bin/${tokens[0]}.sh ${tokens[*]}
+	#Echo "Command: ${tokens[0]} Arguments: ${tokens[@]:1}"
+	./bin/${tokens[0]}.sh ${tokens[@]:1}
 done < $1
 

@@ -18,9 +18,9 @@ public class RegistrationNumberVsSlotNumberQueryCommand implements CLICommand {
         slotNumber = ParkingLot.getInstance().registrationNumberVsSlotNumberQuery (registrationNumber);
 
         if (slotNumber >= 0) {
-            outputWriter.write(Integer.toString(slotNumber));
+            outputWriter.write(Integer.toString(slotNumber) + "\n");
         } else {
-            outputWriter.write("Not found");
+            outputWriter.write("Not found \n");
         }
     }
 }

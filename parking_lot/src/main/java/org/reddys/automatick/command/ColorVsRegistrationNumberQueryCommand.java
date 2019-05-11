@@ -21,12 +21,14 @@ public class ColorVsRegistrationNumberQueryCommand implements CLICommand {
         List<ParkingSlot> filteredList = ParkingLot.getInstance().colorQuery (color);
         Iterator<ParkingSlot> slotsIterator = filteredList.iterator();
         if (filteredList.size() <= 0) {
-            outputWriter.write("No vehicles found");
+            outputWriter.write("No vehicles found \n");
         }
         while (slotsIterator.hasNext()) {
             outputWriter.write(slotsIterator.next().getParkedVehicle().getRegistrationNumber());
             if (slotsIterator.hasNext()) {
                 outputWriter.write (",");
+            } else {
+                outputWriter.write ("\n");
             }
         }
     }

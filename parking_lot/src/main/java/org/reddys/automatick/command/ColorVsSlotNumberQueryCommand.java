@@ -20,7 +20,7 @@ public class ColorVsSlotNumberQueryCommand implements CLICommand {
 
         List<ParkingSlot> filteredList = ParkingLot.getInstance().colorQuery (color);
         if (filteredList.isEmpty()) {
-            outputWriter.write("No vehicles found");
+            outputWriter.write("No vehicles found\n");
         }
         Iterator <ParkingSlot> slotIterator = filteredList.iterator();
         while (slotIterator.hasNext()) {
@@ -29,6 +29,8 @@ public class ColorVsSlotNumberQueryCommand implements CLICommand {
 
             if (slotIterator.hasNext()) {
                 outputWriter.write(",");
+            } else {
+                outputWriter.write("\n");
             }
         }
     }

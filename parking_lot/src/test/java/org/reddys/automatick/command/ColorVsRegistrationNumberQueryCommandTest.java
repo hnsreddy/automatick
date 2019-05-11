@@ -29,7 +29,7 @@ public class ColorVsRegistrationNumberQueryCommandTest {
         String args[] = {"white"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("test1,test4", writer.toString());
+        Assert.assertEquals("test1,test4\n", writer.toString());
     }
 
     @Test
@@ -38,7 +38,7 @@ public class ColorVsRegistrationNumberQueryCommandTest {
         String args[] = {"brown"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("No vehicles found", writer.toString());
+        Assert.assertEquals("No vehicles found \n", writer.toString());
     }
 
     @Test

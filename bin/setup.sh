@@ -8,4 +8,5 @@ mvn clean install
 
 Echo "Starting up parking lot server for you..."
 workingDirectory="$PWD"
+Echo "Using $workingDirectory/target/automatick-1.0-SNAPSHOT.jar"
 nohup java -jar $workingDirectory/target/automatick-1.0-SNAPSHOT.jar &

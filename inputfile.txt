@@ -1,1 +1,10 @@
-park test
+create_lot 4
+park ka51mg511 white
+park ka36b0105 red
+park ka01ab0890 brown
+park ka51mc2665 white
+registration_numbers_for_cars_with_colour white
+slot_numbers_for_cars_with_colour white
+slot_number_for_registration_number ka51mg511
+leave 1
+exit

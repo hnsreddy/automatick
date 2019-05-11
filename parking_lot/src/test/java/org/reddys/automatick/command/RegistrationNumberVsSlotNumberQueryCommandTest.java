@@ -39,7 +39,7 @@ public class RegistrationNumberVsSlotNumberQueryCommandTest {
         String args[] = {"test3"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("2", writer.toString());
+        Assert.assertEquals("2\n", writer.toString());
     }
 
     @Test
@@ -48,7 +48,7 @@ public class RegistrationNumberVsSlotNumberQueryCommandTest {
         String args[] = {"test8"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Not found", writer.toString());
+        Assert.assertEquals("Not found \n", writer.toString());
     }
 
     @AfterClass
