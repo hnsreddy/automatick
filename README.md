@@ -93,7 +93,7 @@ bin/slot_number_for_registration_number.sh <vehicle registration number>
 ``` 
 bin/exit.sh
 ```
-
+The application will continue to run until the exit command is used. Please remember to exit when done.
 
 ## Built With
 * [Maven](https://maven.apache.org/) - Dependency Management
