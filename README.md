@@ -54,38 +54,38 @@ Exiting parking lot application; bye bye!
 ## Supported commands
 The application once started using the ####bin/setup.sh command will continue to run and serve responses to supported commands. Below is a list of commands supported by this application.
 
-###Creating a parking lot
+### Creating a parking lot
 ```
 bin/create_lot.sh <number of slots>
 ```
 
 This command initialises the parking lot application with a pre-defined number of slots. The only argument needed to run this command is an integer (number of slots)
 
-###Park a car
+### Park a car
 ```
 bin/park.sh <vehicle registration number> <vehicle color>
 ```
 
 This command will be used to issue a ticket, it figures out which slot is free and allocates it to the vehicle. Registration number and color of the vehicle are the 2 arguments that needs to be passed to this command.
 
-###Un-park a car
+### Un-park a car
 ```
 bin/leave.sh <slot number>
 ```
 
 This command is used when the vehicle is leaving the parking lot; it basically frees up a specified slot number and makes it available for parking.
 
-##Reporting
-###List down registration numbers of all cars of a specified color
+## Reporting
+### List down registration numbers of all cars of a specified color
 ```
 bin/registration_numbers_for_cars_with_colour.sh <color>
 ```
-###List down all slot numbers of a car of specified color
+### List down all slot numbers of a car of specified color
 ```
 bin/slot_numbers_for_cars_with_colour.sh <color>
 ```
 
-###Show slot number of a car whose registration number is given
+### Show slot number of a car whose registration number is given
 ```
 bin/slot_number_for_registration_number.sh <vehicle registration number>
 ```
