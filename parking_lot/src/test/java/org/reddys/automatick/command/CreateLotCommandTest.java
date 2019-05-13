@@ -32,7 +32,7 @@ public class CreateLotCommandTest {
         String args[] = {};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Invalid use of command - create_parking_lot command requires number of slots to be specified\n", writer.toString());
+        Assert.assertEquals("Invalid use of command - create_parking_lot command requires number of slots to be specified", writer.toString());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class CreateLotCommandTest {
         String args[] = {"s"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Invalid argument passed, cannot create a parking lot with specified arguments. Try and be a little more sensible\n", writer.toString());
+        Assert.assertEquals("Invalid argument passed, cannot create a parking lot with specified arguments. Try and be a little more sensible", writer.toString());
     }
 
     @Test
@@ -50,7 +50,7 @@ public class CreateLotCommandTest {
         String args[] = {"4"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Parking lot already created \n", writer.toString());
+        Assert.assertEquals("Parking lot already created", writer.toString());
     }
 
     @Test
@@ -62,7 +62,7 @@ public class CreateLotCommandTest {
         String args[] = {"4"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Created a parking lot with 4 slots\n", writer.toString());
+        Assert.assertEquals("Created a parking lot with 4 slots", writer.toString());
     }
 
     @AfterClass

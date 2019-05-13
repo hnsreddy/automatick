@@ -33,7 +33,7 @@ public class ColorVsSlotNumberQueryCommandTest {
         String args[] = {"red"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("1\n", writer.toString());
+        Assert.assertEquals("1", writer.toString());
     }
 
     @Test
@@ -42,7 +42,7 @@ public class ColorVsSlotNumberQueryCommandTest {
         String args[] = {"white"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("0,3\n", writer.toString());
+        Assert.assertEquals("0,3", writer.toString());
     }
 
     @Test
@@ -60,7 +60,7 @@ public class ColorVsSlotNumberQueryCommandTest {
         String args[] = {"brown"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("No vehicles found\n", writer.toString());
+        Assert.assertEquals("No vehicles found", writer.toString());
     }
 
     @AfterClass

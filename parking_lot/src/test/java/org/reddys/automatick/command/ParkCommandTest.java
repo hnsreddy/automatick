@@ -31,7 +31,7 @@ public class ParkCommandTest {
         String[] args = {};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order\n", writer.toString());
+        Assert.assertEquals("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order", writer.toString());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ParkCommandTest {
         String[] args = {"test1"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order\n", writer.toString());
+        Assert.assertEquals("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order", writer.toString());
     }
 
     @Test
@@ -58,7 +58,7 @@ public class ParkCommandTest {
         String[] args = {"test1", "white"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Sorry, parking lot is full\n", writer.toString());
+        Assert.assertEquals("Sorry, parking lot is full", writer.toString());
     }
 
     @Test
@@ -73,7 +73,7 @@ public class ParkCommandTest {
         String[] args = {"test1", "white"};
         StringWriter writer = new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Allocated slot number:0\n", writer.toString());
+        Assert.assertEquals("Allocated slot number:0", writer.toString());
     }
 
 

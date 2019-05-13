@@ -32,7 +32,7 @@ public class LeaveCommandTest {
         String args[] = {};
         StringWriter writer =  new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Invalid use of command - leave command requires slot number to be specified\n", writer.toString());
+        Assert.assertEquals("Invalid use of command - leave command requires slot number to be specified", writer.toString());
     }
 
     @Test
@@ -41,7 +41,7 @@ public class LeaveCommandTest {
         String args[] = {"2"};
         StringWriter writer =  new StringWriter();
         command.executeCLICommand(args, writer);
-        Assert.assertEquals("Slot number 2 is free\n", writer.toString());
+        Assert.assertEquals("Slot number 2 is free", writer.toString());
     }
 
 

@@ -12,7 +12,7 @@ public class ParkCommand implements CLICommand {
     @Override
     public void executeCLICommand(String[] args, Writer outputWriter) throws IOException {
         if (args.length < 2) {
-            outputWriter.write("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order\n");
+            outputWriter.write("Invalid use of command - Park command requires vehicle registration number and vehicle color in the same order");
             return;
         }
         String vehicleRegistrationNumber = args[0];
@@ -20,9 +20,9 @@ public class ParkCommand implements CLICommand {
 
         try {
             int slotNumber = ParkingLot.getInstance().park (new Vehicle(vehicleRegistrationNumber, vehicleColor));
-            outputWriter.write("Allocated slot number:" + slotNumber + "\n");
+            outputWriter.write("Allocated slot number:" + slotNumber);
         } catch (ParkingFullException pfx) {
-            outputWriter.write(pfx.getMessage() + "\n");
+            outputWriter.write(pfx.getMessage());
         }
     }
 }
