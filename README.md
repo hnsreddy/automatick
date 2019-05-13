@@ -17,7 +17,7 @@ The application was authored and tested on a unix based system; I am not quite s
 Clone this repo anywhere you want to and run the following command after navigating to the application base folder (normally this would be a folder named "automatick")
 
 ```
-bin/setup.sh
+bin/setup
 ```
 
 ## Test run
@@ -25,7 +25,7 @@ bin/setup.sh
 Once the application comes up run the following command to test the commands application supports. An input file for the test will be available with this distribution to facilitate this. Run this command from the applications base folder.
 
 ```
-bin/parking_lot.sh inputfile.txt
+bin/parking_lot inputfile.txt
 ```
 
 ### Sample output
@@ -56,21 +56,21 @@ The application once started using the ####bin/setup.sh command will continue to
 
 ### Creating a parking lot
 ```
-bin/create_lot.sh <number of slots>
+bin/create_lot <number of slots>
 ```
 
 This command initialises the parking lot application with a pre-defined number of slots. The only argument needed to run this command is an integer (number of slots)
 
 ### Park a car
 ```
-bin/park.sh <vehicle registration number> <vehicle color>
+bin/park <vehicle registration number> <vehicle color>
 ```
 
 This command will be used to issue a ticket, it figures out which slot is free and allocates it to the vehicle. Registration number and color of the vehicle are the 2 arguments that needs to be passed to this command.
 
 ### Un-park a car
 ```
-bin/leave.sh <slot number>
+bin/leave <slot number>
 ```
 
 This command is used when the vehicle is leaving the parking lot; it basically frees up a specified slot number and makes it available for parking.
@@ -78,20 +78,20 @@ This command is used when the vehicle is leaving the parking lot; it basically f
 ## Reporting
 ### List down registration numbers of all cars of a specified color
 ```
-bin/registration_numbers_for_cars_with_colour.sh <color>
+bin/registration_numbers_for_cars_with_colour <color>
 ```
 ### List down all slot numbers of a car of specified color
 ```
-bin/slot_numbers_for_cars_with_colour.sh <color>
+bin/slot_numbers_for_cars_with_colour <color>
 ```
 
 ### Show slot number of a car whose registration number is given
 ```
-bin/slot_number_for_registration_number.sh <vehicle registration number>
+bin/slot_number_for_registration_number <vehicle registration number>
 ```
 ## Exit the application
 ``` 
-bin/exit.sh
+bin/exit
 ```
 The application will continue to run until the exit command is used. Please remember to exit when done.
 
