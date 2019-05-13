@@ -4,6 +4,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.reddys.automatick.exception.InvalidLimitException;
+import org.reddys.automatick.exception.InvalidSlotNumberException;
 import org.reddys.automatick.exception.ParkingFullException;
 
 import java.lang.reflect.Field;
@@ -54,13 +55,21 @@ public class ParkingLotTest {
     }
 
     @Test
-    public void leaveHappyPath() throws InvalidLimitException, ParkingFullException{
+    public void leaveHappyPath() throws InvalidLimitException, ParkingFullException, InvalidSlotNumberException{
         ParkingLot.getInstance().setLimit(2);
         ParkingLot.getInstance().park(new Vehicle("test1", "white"));
         ParkingLot.getInstance().park(new Vehicle("test2", "red"));
         ParkingLot.getInstance().leave(0);
         int slotNumber = ParkingLot.getInstance().park(new Vehicle("test3", "black"));
         Assert.assertEquals(0, slotNumber);
+    }
+
+    @Test (expected = InvalidSlotNumberException.class)
+    public void leaveWithException() throws InvalidSlotNumberException,InvalidLimitException,ParkingFullException {
+        ParkingLot.getInstance().setLimit(2);
+        ParkingLot.getInstance().park(new Vehicle("test1", "white"));
+        ParkingLot.getInstance().park(new Vehicle("test2", "red"));
+        ParkingLot.getInstance().leave(3);
     }
 
     @Test

@@ -1,6 +1,7 @@
 package org.reddys.automatick.command;
 
 import org.reddys.automatick.domain.ParkingLot;
+import org.reddys.automatick.exception.InvalidSlotNumberException;
 
 import java.io.IOException;
 import java.io.Writer;
@@ -14,7 +15,11 @@ public class LeaveCommand implements CLICommand {
         }
 
         int slotNumber = Integer.parseInt(args[0]);
-        ParkingLot.getInstance().leave(slotNumber);
-        outputWriter.write("Slot number " + slotNumber + " is free");
+        try {
+            ParkingLot.getInstance().leave(slotNumber);
+            outputWriter.write("Slot number " + slotNumber + " is free");
+        }catch (InvalidSlotNumberException ise) {
+            outputWriter.write(ise.getMessage());
+        }
     }
 }

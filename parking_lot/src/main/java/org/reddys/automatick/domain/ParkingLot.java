@@ -3,6 +3,7 @@ package org.reddys.automatick.domain;
 import org.apache.commons.collections4.ListUtils;
 import org.apache.commons.collections4.Predicate;
 import org.reddys.automatick.exception.InvalidLimitException;
+import org.reddys.automatick.exception.InvalidSlotNumberException;
 import org.reddys.automatick.exception.ParkingFullException;
 
 import java.util.ArrayList;
@@ -50,9 +51,13 @@ public class ParkingLot {
         throw new ParkingFullException();
     }
 
-    public void leave(int slotNumber) {
-        ParkingSlot slot = slots.get(slotNumber);
-        slot.setParkedVehicle(null);
+    public void leave(int slotNumber) throws InvalidSlotNumberException {
+        if (slotNumber < slots.size()) {
+            ParkingSlot slot = slots.get(slotNumber);
+            slot.setParkedVehicle(null);
+        } else {
+            throw new InvalidSlotNumberException("Slot number specified does not exist");
+        }
     }
 
     public static ParkingLot getInstance() {
