@@ -1,2 +1,4 @@
 parking_lot/target
 *.iml
+*.xml
+*.class

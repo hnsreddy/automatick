@@ -1,5 +1,5 @@
-#!/bin/sh -u
-umask 022
+#!/bin/sh 
+#umask 022
 Echo "Setting up parking lot, this may take a while please be patient"
 
 Echo "I am assuming you have maven installed, going ahead with the build using maven"

@@ -7,6 +7,6 @@ while read line
 do
 	tokens=( $line )
 	#Echo "Command: ${tokens[0]} Arguments: ${tokens[@]:1}"
-	./bin/${tokens[0]}.sh ${tokens[@]:1}
+	./bin/${tokens[0]} ${tokens[@]:1}
 done < $1
 
