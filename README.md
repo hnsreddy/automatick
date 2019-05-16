@@ -33,23 +33,35 @@ bin/parking_lot inputfile.txt
 Executing commands from input file inputfile.txt
 Creating parking lot with 4 slots
 Created a parking lot with 4 slots
+
 Executing park command
 Allocated slot number:0
+
 Executing park command
 Allocated slot number:1
+
 Executing park command
 Allocated slot number:2
+
 Executing park command
 Allocated slot number:3
+
 Registration numbers for cars with color white
-ka51mg511,ka51mc2665
+ka51mg511
+ka51mc2665
+
 Cars of white color are parked in slots:
-0,3
+0
+3
+
 Car with registration number is parked in: 
 0
+
 Executing leave  command
 Slot number 1 is free
+
 Exiting parking lot application; bye bye!
+
 ```
 ## Supported commands
 The application once started using the ####bin/setup.sh command will continue to run and serve responses to supported commands. Below is a list of commands supported by this application.
