@@ -22,7 +22,7 @@ bin/setup
 
 ## Test run
 
-Once the application comes up run the following command to test the commands application supports. An input file for the test will be available with this distribution to facilitate this. Run this command from the applications base folder.
+Once the application comes up run the following command to test the commands application supports. An input file for the test is made available with this distribution to facilitate this. Run this command from the applications base folder.
 
 ```
 bin/parking_lot inputfile.txt
