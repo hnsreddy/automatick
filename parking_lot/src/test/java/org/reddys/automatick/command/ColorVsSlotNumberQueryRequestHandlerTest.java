@@ -56,7 +56,6 @@ public class ColorVsSlotNumberQueryRequestHandlerTest {
         request.setArguments(args);
         command.executeRequest(request, server);
         verify(server, times (1)).respond("0");
-        verify(server, times (1)).respond(",");
         verify(server, times (1)).respond("3");
     }
 

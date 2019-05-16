@@ -27,10 +27,6 @@ public class ColorVsSlotNumberQueryRequestHandler implements IRequestHandler {
         while (slotIterator.hasNext()) {
             ParkingSlot slot = slotIterator.next();
             server.respond(Integer.toString(slot.getSlotNumber()));
-
-            if (slotIterator.hasNext()) {
-                server.respond(",");
-            }
         }
     }
 }

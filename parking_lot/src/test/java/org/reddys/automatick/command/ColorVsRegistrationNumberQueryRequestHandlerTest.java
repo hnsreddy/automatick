@@ -44,7 +44,6 @@ public class ColorVsRegistrationNumberQueryRequestHandlerTest {
 
         command.executeRequest(request, server);
         verify(server, times(1)).respond("test1");
-        verify(server, times(1)).respond(",");
         verify(server, times(1)).respond("test4");
     }
 

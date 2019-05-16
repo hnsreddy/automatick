@@ -26,9 +26,6 @@ public class ColorVsRegistrationNumberQueryRequestHandler implements IRequestHan
         }
         while (slotsIterator.hasNext()) {
             server.respond(slotsIterator.next().getParkedVehicle().getRegistrationNumber());
-            if (slotsIterator.hasNext()) {
-                server.respond (",");
-            }
         }
     }
 }

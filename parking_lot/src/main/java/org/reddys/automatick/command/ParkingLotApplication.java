@@ -20,7 +20,6 @@ public class ParkingLotApplication {
 
                 RequestHandlerFactory.getRequestHandler(request).executeRequest(request, server);
                 server.close();
-
             }
     }
 }
