@@ -25,21 +25,10 @@ public class ParkingLotTest {
         Assert.assertEquals(4, ParkingLot.getInstance().getLimit());
     }
 
-    @Test
-    public void setLimitReduceValid() throws ParkingFullException, InvalidLimitException{
-        ParkingLot.getInstance().setLimit(4);
-        ParkingLot.getInstance().park(new Vehicle("test1", "white"));
-        ParkingLot.getInstance().park(new Vehicle("test2", "red"));
-        ParkingLot.getInstance().setLimit(3);
-        Assert.assertEquals(3, ParkingLot.getInstance().getLimit());
-    }
-
     @Test (expected = InvalidLimitException.class)
-    public void setLimitReduceInValid() throws ParkingFullException, InvalidLimitException {
-        ParkingLot.getInstance().setLimit(2);
-        ParkingLot.getInstance().park(new Vehicle("test1", "white"));
-        ParkingLot.getInstance().park(new Vehicle("test2", "red"));
-        ParkingLot.getInstance().setLimit(1);
+    public void resetLimit() throws  InvalidLimitException{
+        ParkingLot.getInstance().setLimit(4);
+        ParkingLot.getInstance().setLimit(3);
     }
 
     @Test (expected = ParkingFullException.class)

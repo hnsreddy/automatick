@@ -10,8 +10,8 @@ public class ParkingLotApplication {
 
     public static void main(String[] args) {
         IParkingLotServer server = new ParkingLotServerImpl();
-        server.createAndListen(56060);
             while (true) {
+                server.createAndListen(56060);
                 ParkingLotRequest request = server.buildRequest();
                 if (request.getCommand().toLowerCase().trim().equals("exit")) {
                     server.close();
@@ -19,6 +19,8 @@ public class ParkingLotApplication {
                 }
 
                 RequestHandlerFactory.getRequestHandler(request).executeRequest(request, server);
+                server.close();
+
             }
     }
 }

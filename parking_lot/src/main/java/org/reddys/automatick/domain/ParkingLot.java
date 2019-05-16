@@ -18,18 +18,10 @@ public class ParkingLot {
     private ArrayList<ParkingSlot> slots = new ArrayList<ParkingSlot>();
 
     public void setLimit(int numberOfSlots) throws InvalidLimitException {
-        if (slots.size() > numberOfSlots) {
-            ArrayList<ParkingSlot> copyOfSlots = new ArrayList<ParkingSlot>(slots);
-            for (int i = numberOfSlots ; i < slots.size(); i++) {
-                if (!copyOfSlots.get(numberOfSlots).isFree()) {
-                    throw new InvalidLimitException("Vehicles still parked, limiting of slots not allowed");
-                }
-                copyOfSlots.remove(numberOfSlots);
-            }
-            if (copyOfSlots.size() == numberOfSlots) slots = copyOfSlots;
+        if (slots.size() > 0) {
+            throw new InvalidLimitException("Sorry, limit already set");
         }
-
-        for (int i=slots.size();i<numberOfSlots;i++) slots.add(new ParkingSlot(i));
+        for (int i=0;i<numberOfSlots;i++) slots.add(new ParkingSlot(i));
     }
 
     public int getLimit() {
