@@ -2,3 +2,5 @@ parking_lot/target
 *.iml
 *.xml
 *.class
+*.DS_store
+*.out
