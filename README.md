@@ -8,8 +8,8 @@ This is a very simple app and hence getting the application fired up is a very s
 
 ## Prerequisites
 
-Java version 11+
-Maven version 4+
+Java version 8+
+Maven version 3.6+
 The application was authored and tested on a unix based system; I am not quite sure if this application will run as seamlessly as it does on unix.
 
 ## Installing
