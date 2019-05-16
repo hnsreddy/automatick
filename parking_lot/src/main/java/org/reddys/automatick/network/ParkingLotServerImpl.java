@@ -56,7 +56,7 @@ public class ParkingLotServerImpl implements IParkingLotServer{
             socket.close();
             serverSocket.close();
         } catch (IOException e) {
-            throw new SocketClosingException("Error closing connection");
+            throw new SocketClosingException("Error closing resources");
         }
     }
 

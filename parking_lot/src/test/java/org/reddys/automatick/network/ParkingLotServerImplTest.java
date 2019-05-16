@@ -73,7 +73,17 @@ public class ParkingLotServerImplTest {
     }
 
     @Test
-    public void close() {
+    public void close() throws IOException{
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        ByteArrayInputStream inputStream = new ByteArrayInputStream("create_lot 4\n".getBytes());
+        doReturn(serverSocket).when(parkingLotServer).getServerSocket(56060);
+        when(serverSocket.accept()).thenReturn(socket);
+        when (socket.getInputStream()).thenReturn(inputStream);
+        when (socket.getOutputStream()).thenReturn(outputStream);
+        parkingLotServer.createAndListen(56060);
 
+        parkingLotServer.close();
+        verify(socket, times(1)).close();
+        verify(serverSocket, times(1)).close();
     }
 }

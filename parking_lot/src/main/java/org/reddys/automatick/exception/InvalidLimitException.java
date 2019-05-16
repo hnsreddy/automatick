@@ -1,15 +1,8 @@
 package org.reddys.automatick.exception;
 
-public class InvalidLimitException extends Exception {
+public class InvalidLimitException extends RuntimeException {
 
-    private String message;
-
-    public InvalidLimitException(String message) {
-        this.message = message;
-    }
-
-    @Override
-    public String getMessage() {
-        return this.message;
+    public InvalidLimitException(String s) {
+        super(s);
     }
 }

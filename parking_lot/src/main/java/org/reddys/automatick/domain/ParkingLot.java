@@ -17,9 +17,9 @@ public class ParkingLot {
 
     private ArrayList<ParkingSlot> slots = new ArrayList<ParkingSlot>();
 
-    public void setLimit(int numberOfSlots) throws InvalidLimitException {
+    public void setLimit(int numberOfSlots)  {
         if (slots.size() > 0) {
-            throw new InvalidLimitException("Sorry, limit already set");
+            throw new InvalidLimitException("Limit once set cannot be changed");
         }
         for (int i=0;i<numberOfSlots;i++) slots.add(new ParkingSlot(i));
     }
@@ -40,7 +40,7 @@ public class ParkingLot {
                 return slot;
             }
         }
-        throw new ParkingFullException();
+        throw new ParkingFullException("Sorry, parking lot is full");
     }
 
     public void leave(int slotNumber) throws InvalidSlotNumberException {

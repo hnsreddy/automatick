@@ -1,7 +1,6 @@
 package org.reddys.automatick.command;
 
 import org.reddys.automatick.domain.ParkingLot;
-import org.reddys.automatick.exception.InvalidLimitException;
 import org.reddys.automatick.network.IParkingLotServer;
 import org.reddys.automatick.network.ParkingLotRequest;
 
@@ -26,12 +25,8 @@ public class CreateLotRequestHandler implements IRequestHandler {
             server.respond("Parking lot already created");
             return;
         }
-        try {
-            ParkingLot.getInstance().setLimit (numberOfSlots);
-            server.respond ("Created a parking lot with " + numberOfSlots + " slots");
-        } catch (InvalidLimitException e) {
-            server.respond(e.getMessage());
-        }
+        ParkingLot.getInstance().setLimit (numberOfSlots);
+        server.respond ("Created a parking lot with " + numberOfSlots + " slots");
     }
 
 }

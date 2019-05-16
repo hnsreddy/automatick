@@ -59,6 +59,17 @@ public class LeaveRequestHandlerTest {
         verify(server, times(1)).respond("Slot number 2 is free");
     }
 
+    @Test
+    public void executeCLICommandInvalidSlot() throws IOException {
+        LeaveRequestHandler command = new LeaveRequestHandler();
+        String args[] = {"6"};
+        ParkingLotRequest request = new ParkingLotRequest();
+        request.setArguments(args);
+
+        command.executeRequest(request, server);
+        verify(server, times(1)).respond("Slot number specified does not exist");
+    }
+
 
     @AfterClass
     public static void tearDown() throws IllegalAccessException, NoSuchFieldException {
