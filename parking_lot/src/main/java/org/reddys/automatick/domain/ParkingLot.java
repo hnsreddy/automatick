@@ -1,13 +1,14 @@
 package org.reddys.automatick.domain;
 
-import org.apache.commons.collections4.ListUtils;
-import org.apache.commons.collections4.Predicate;
 import org.reddys.automatick.exception.InvalidLimitException;
 import org.reddys.automatick.exception.InvalidSlotNumberException;
 import org.reddys.automatick.exception.ParkingFullException;
 
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class ParkingLot {
 
@@ -21,6 +22,7 @@ public class ParkingLot {
         if (slots.size() > 0) {
             throw new InvalidLimitException("Limit once set cannot be changed");
         }
+        
         for (int i=0;i<numberOfSlots;i++) slots.add(new ParkingSlot(i));
     }
 
@@ -35,10 +37,9 @@ public class ParkingLot {
     }
 
     private ParkingSlot retrieveFirstFreeSlot() throws ParkingFullException {
-        for (ParkingSlot slot: slots) {
-            if (slot.isFree()) {
-                return slot;
-            }
+        Optional<ParkingSlot> answer = slots.stream().filter(slot -> slot.isFree()).findFirst();
+        if (answer.isPresent()) {
+            return answer.get();
         }
         throw new ParkingFullException("Sorry, parking lot is full");
     }
@@ -61,19 +62,13 @@ public class ParkingLot {
 
 
     public List<ParkingSlot> colorQuery(final String color) {
-        return ListUtils.select(slots, new Predicate <ParkingSlot>() {
-            @Override
-            public boolean evaluate(ParkingSlot parkingSlot) {
-                return !parkingSlot.isFree() && parkingSlot.getParkedVehicle().getColor().equals(color);
-            }
-        });
+        return slots.stream().filter(slot -> !slot.isFree() && slot.getParkedVehicle().getColor().equals(color)).collect(Collectors.toList());
     }
 
     public int registrationNumberVsSlotNumberQuery(final String registrationNumber) {
-        for (ParkingSlot slot: slots) {
-            if (slot.getParkedVehicle().getRegistrationNumber().equals(registrationNumber)) {
-                return slot.getSlotNumber();
-            }
+        Optional<ParkingSlot> answer = slots.stream().filter(slot -> slot.getParkedVehicle().getRegistrationNumber().equals(registrationNumber)).findAny();
+        if (answer.isPresent()) {
+            return answer.get().getSlotNumber();
         }
         return -1;
     }
