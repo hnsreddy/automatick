@@ -86,7 +86,7 @@
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>libs/</classpathPrefix>
                             <mainClass>
-                                org.reddys.automatick.command.ParkingLotApplication
+                                org.reddys.automatick.ParkingLotApplication
                             </mainClass>
                         </manifest>
                     </archive>
