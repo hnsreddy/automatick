@@ -1,4 +1,4 @@
-package org.reddys.automatick.command;
+package org.reddys.automatick;
 
 
 import org.reddys.automatick.factory.RequestHandlerFactory;
